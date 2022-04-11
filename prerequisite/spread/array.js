@@ -8,7 +8,7 @@ console.log(arr1); //[1, 2, 3, 4]
 arr.push(5)
 
 console.log(arr); //[1, 2, 3, 4, 5]
-console.log(arr1); //[1, 2, 3, 4, 5]
+console.log(arr1); //[1, 2, 3, 4, 5] called cloning of an array
 
 //Spread operator
 console.log(...arr); //1 2 3 4 5 in format of string
