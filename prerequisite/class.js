@@ -1,25 +1,27 @@
-//https://www.youtube.com/watch?v=Yfv8lZR0RyM&list=PL-Jc9J83PIiEeD3I4VXETPDmzJ3Z1rWb4&index=42
-
-function car(Name , Model , Color){
-    this.name = Name
-    this.model = Model
-    this.color = Color
-
-    this.test = function(){
-           console.log(`I am driving ${this.model}`)
+class person {
+    constructor(name, age) {
+        (this.name = name), (this.age = age);
     }
 }
 
+class teacher extends person {
+    constructor(name, age, classStrength) {
+        super(name, age);
+        this.classStrength = classStrength;
+    }
+}
 
+class student extends person {
+    constructor(name, age, cgpa) {
+        super(name, age);
+        this.cgpa = cgpa;
+    }
+}
 
-let car1 = new car('BMW' , 'X6' , 'White')
+let person1 = new person("Adam", 25);
+let teacher1 = new teacher("Steve", 40, 100);
+let student1 = new student("Mark", 21, 8.0);
 
-let car2 = new car('Mercedes' , 'S class' , 'red')
-
-car1.test()
-
-
-// console.log(car1)
-
-// console.log(car2)
-
+console.log(person1);
+console.log(teacher1);
+console.log(student1);
