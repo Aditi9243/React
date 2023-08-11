@@ -70,9 +70,120 @@ function combine (a, b, c) {
     return result;
 }
 
-//  5. Arrow Function
+//  5. Arrow Function `````````````````````````````````````````
+
+//  Syntax : () => { ...body }
 
 export default (userName, userMessage) => {
     console.log("Hello!");
     return userName + " " + userMessage;
 }
+
+//  6. Objects and Classes `````````````````````````````````````````
+
+const user = {
+    name: "Aditi",
+    age: 21,
+  
+    greet() {
+      console.log("Hello");
+      console.log(this.name + " " + this.age);
+    }
+  };
+  
+  console.log(user);  //{name: "Aditi", age: 21, greet: ƒ greet()}
+  console.log(user.name); //Aditi 
+  user.greet(); //Hello {next-line} Aditi 21 
+  
+  // Note : First letter in `class name` should be capital  {Important}
+  class User {
+    constructor(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+  
+    greet() {
+      console.log("Hi!");
+    }
+  }
+  
+  const user1 = new User("Anil", 45);
+  console.log(user1); //User {name: "Anil", age: 45, constructor: Object}
+  console.log(user1.name);  //Anil 
+  user1.greet();  //Hi! 
+
+// 7. Arrays and Arrays methods `````````````````````````````````````````
+
+const hobbies = ["reading", "cooking", "dancing"];
+console.log(hobbies[0]);  //reading 
+
+hobbies.push("working");
+console.log(hobbies);
+// ["reading", "cooking", "dancing", "working"]
+// 0: "reading"
+// 1: "cooking"
+// 2: "dancing"
+// 3: "working"
+
+// const index = hobbies.findIndex((item) => {
+//   return item === 'reading';
+// });
+
+const index = hobbies.findIndex((item) => item === "reading");
+console.log(index); //0
+
+const editedHobbies = hobbies.map((item) => item + "!");
+console.log(editedHobbies); //["reading!", "cooking!", "dancing!", "working!"]
+
+let i = 0;
+const newArr = hobbies.map((item) => ({id: i++, name: item}));
+console.log(newArr);
+// [Object, Object, Object, Object]
+// 0: Object
+//  id: 0
+//  name: "reading"
+// 1: Object
+// 2: Object
+// 3: Object
+
+// Question - Your task is to add the missing logic to a transformToObjects() function that should transform a list of numbers into a list of JavaScript objects.
+// In the newly returned array, every object must have a val key and the input array's number as a value.
+// For example, for the provided input [1, 2, 3] the transformToObjects([1, 2, 3]) function should return [{val: 1}, {val: 2}, {val: 3}].
+
+function transformToObjects(numberArray) {
+    // Todo: Add your logic
+    // should return an array of objects
+    const ans = numberArray.map((item) => ({val: item}));
+    return ans;
+}
+
+//  8. Destructuring `````````````````````````````````````````
+
+// (a) Destructuring the `array`
+
+// const userNameData = ["Anil", "Barnwal"];
+// const firstName = userNameData[0];
+// const lastName = userNameData[1];
+
+const [firstName, lastName] = ["Anil", "Barnwal"];
+
+console.log(firstName + " - " + lastName);  //Anil - Barnwal 
+
+// (b) Destructuring the `object`
+
+// const user = {
+//   name: "Aditi",
+//   age: 21,
+// }
+// const name = user.name;
+// const age = user.age;
+
+const {name: userName, age} = {
+  name: "Aditi",
+  age: 21,
+}
+
+console.log(userName + " - " + age);  //Aditi - 21 
+//where `userName` is alias name for `name` key
+
+// (c) Destructuring the `function` - Refer document**
