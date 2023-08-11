@@ -69,3 +69,10 @@ function combine (a, b, c) {
     const result = a * b / c;
     return result;
 }
+
+//  5. Arrow Function
+
+export default (userName, userMessage) => {
+    console.log("Hello!");
+    return userName + " " + userMessage;
+}
