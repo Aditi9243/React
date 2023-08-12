@@ -187,3 +187,31 @@ console.log(userName + " - " + age);  //Aditi - 21
 //where `userName` is alias name for `name` key
 
 // (c) Destructuring the `function` - Refer document**
+
+//  9. Spread Operator `````````````````````````````````````````
+
+const oldHobbies = ["reading", "cooking"];
+const newHobbies = ["dancing"];
+
+const mergeArray = [oldHobbies, newHobbies];
+console.log(mergeArray);
+//[Array(2), Array(1)]
+// 0: Array(2)
+// 1: Array(1)
+
+const newMergeArray = [...hobbies, ...newHobbies];
+console.log(newMergeArray); //["reading", "cooking", "dancing"]
+
+const userDetail = {
+  name: "Aditi",
+  age: 21
+}
+
+const extendedUser = {
+  isAdmin: true,
+  ...userDetail
+}
+
+console.log(extendedUser);  //{isAdmin: true, name: "Aditi", age: 21}
+
+//  10. Control Structure `````````````````````````````````````````
