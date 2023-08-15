@@ -215,3 +215,73 @@ const extendedUser = {
 console.log(extendedUser);  //{isAdmin: true, name: "Aditi", age: 21}
 
 //  10. Control Structure `````````````````````````````````````````
+
+const password = prompt("Your Password");
+if (password === "Hello") {
+  console.log("Hello works");
+} 
+else if (password === "hello") {
+  console.log("hello works");
+} 
+else {
+  console.log("Access not granted");
+}
+
+const cities = ["Delhi", "Agra", "Patna", "Banglore"];
+for(const city of cities) {
+  console.log(city);
+}
+// Delhi 
+// Agra 
+// Patna 
+// Banglore 
+
+//  11. Functions as values `````````````````````````````````````````
+//  (a) in Built-in function
+function handleTimeout() {
+  console.log("Timed out!!");
+}
+
+const handleTimeout2 = () => {
+  console.log("Timed out .... again!!");
+};
+
+setTimeout(handleTimeout, 2000);
+setTimeout(handleTimeout2, 3000);
+setTimeout(() => {
+  console.log("More timed out ... !!");
+}, 4000);
+
+//  (b) in custom function created by you
+function greeter(greetFn)
+{
+  greetFn();
+}
+
+greeter(() => console.log("Passing function as Value"));
+
+//  12. Defining functions inside of functions `````````````````````````````````````````
+
+function init() {
+  function greet() {
+    console.log("Hi");
+  }
+
+  greet();
+}
+
+// greet();  //Error - 'greet' is not defined.
+init();
+
+//  13. Reference vs Primitive Values `````````````````````````````````````````
+
+let userMsg = "Hello";
+userMsg = userMsg.concat("!!!");
+// userMsg.concat("!!!") => This will prduce a new string rather than updating the prev one
+console.log(userMsg);
+
+const books = ["Fiction", "Romantic"];
+// books = [];
+books.push("Self-Help");
+console.log(books); //["Fiction", "Romantic", "Self-Help"]
+// Reference values => stores the address of data in memory. Any changes is done by going to that address and updating the value
